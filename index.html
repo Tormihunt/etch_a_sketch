@@ -1,0 +1,31 @@
+<!-- 
+ Pseudocode:
+ Create empty div container
+ In js make 16 divs using a loop and fill each div with 16 divs
+ Format using flexbox
+On hovering over an element it bubbles up to the container, gets the elements id and changes it's background color
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="logic.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <div>Change grid size: </div>
+            <input type="range" id="slider">
+        </div>
+        <div class="heading">
+            <div>Change color: </div>
+            <input type="color" id="colorPicker">
+        </div>
+        <div class="container" id="container"></div>
+    </div>
+</body>
+</html>
