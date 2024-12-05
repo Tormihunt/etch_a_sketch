@@ -68,16 +68,23 @@ function getRandomColor() {
 const checkbox = document.querySelector("#checkbox")
 
 //When holding left click, draws with color picker's value
+
 const colorPicker = document.querySelector("#colorPicker")
 container.addEventListener("mouseover", (event) => {
     if (mousedownHeld == true) {
         if (checkbox.checked) {
             target = event.target
             target.style.backgroundColor = getRandomColor()
+            //let oldOpacity = target.style.opacity || 0
+            //let newOpacity = parseFloat(oldOpacity) + 0.1
+            //target.style.opacity = newOpacity
         }
         else {
             target = event.target
             target.style.backgroundColor = colorPicker.value
+            //let oldOpacity = target.style.opacity || 0
+            //let newOpacity = parseFloat(oldOpacity) + 0.1
+            //target.style.opacity = newOpacity
         }
 
 
@@ -87,3 +94,5 @@ container.addEventListener("mouseover", (event) => {
 colorPicker.addEventListener("input", () => {
     slider.style.accentColor = colorPicker.value
 })
+
+
