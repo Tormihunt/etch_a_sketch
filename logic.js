@@ -50,12 +50,37 @@ container.addEventListener("mouseup", () => {
 })
 
 
+//choose random color
+let randomColor = "blue"
+function getRandomColor() {
+    const hexadecimalArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
+    function getRandomNumber() {
+        return Math.floor(Math.random()*16)
+    }
+    randomColor = "#"
+    for (let i = 0; i < 6; i++) {
+        randomColor += hexadecimalArray[getRandomNumber()]
+    }
+    return randomColor
+}
+
+
+const checkbox = document.querySelector("#checkbox")
+
 //When holding left click, draws with color picker's value
 const colorPicker = document.querySelector("#colorPicker")
 container.addEventListener("mouseover", (event) => {
     if (mousedownHeld == true) {
-        target = event.target
-        target.style.backgroundColor = colorPicker.value
+        if (checkbox.checked) {
+            target = event.target
+            target.style.backgroundColor = getRandomColor()
+        }
+        else {
+            target = event.target
+            target.style.backgroundColor = colorPicker.value
+        }
+
+
     }
 })
 
